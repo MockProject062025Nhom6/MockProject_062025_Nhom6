@@ -1,63 +1,63 @@
-import img from '@/assets//images/image-login.jpg'
+import img from '@/assets/images/image-login.jpg'
 
 const LoginPage = () => {
   return (
 
-    <div className="container relative p-0 m-0">
-      {/* left side */}
-      <div>
-        <p className="absolute w-[459px] h-[56px] top-[290px] left-[55px] font-[700] text-[56px] leading-[100%] tracking-[0%] text-[#253D90]">Login</p>
-        <p className="absolute w-[312px] h-[37px] top-[384px] left-[55px] font-[400] text-[30px] leading-[100%] tracking-[0%] text-[#969696]">Login to your account</p>
-        <form action="">
+    <div className="flex min-h-screen">
 
-          <div>
-            <label className="absolute w-[174px] h-[27px] top-[470px] left-[55px] font-[700] text-[20px] leading-[100%] tracking-[0%] text-[#253D90]">E-mail Address</label>
-            <input type="email" className="absolute w-[613px] h-[61px] top-[509px] left-[55px] rounded-[6px] border-[2px] bg-[#FFFFFF] border-[#CBB4B4] shadow-sm" />
-          </div>
-          <div>
-            <label className="absolute w-[174px] h-[27px] top-[608px] left-[55px] font-[700] text-[20px] leading-[100%] tracking-[0%] text-[#253D90]">Password</label>
-            <input type="password" className="absolute w-[613px] h-[61px] top-[647px] left-[55px] rounded-[6px] border-[2px] bg-[#FFFFFF] border-[#CBB4B4] shadow-sm" />
-          </div>
+      <div className="w-1/2 flex items-center justify-center bg-white px-12">
+        <div className="w-full max-w-md">
+          <h2 className="text-3xl font-bold text-blue-900 mb-2">Login</h2>
+          <p className="mb-6 text-gray-500">Login to your account.</p>
 
-          <div>
-            <input
-              type="checkbox"
-              className="absolute w-[30px] h-[26px] top-[746px] left-[55px] 
-             appearance-none rounded-[6px] border-2 border-[#CBB4B4] shadow-sm"
-            />
-            <label className="absolute w-[133px] h-[27px] top-[746px] left-[96px] font-[400] text-[20px] leading-[100%] tracking-[0%] text-[#8F8F8F] ">Remember me</label>
-          </div>
-          <div className="absolute w-[159px] h-[27px] top-[746px] left-[509px] font-[700] text-[20px] leading-[100%] tracking-[0%] text-[#253D90]">
-            Reset Password?
-          </div>
+          <form className="space-y-4">
+            <div>
+              <label className="block text-sm font-medium text-gray-700">E-mail Address</label>
+              <input type="email" className="mt-1 block w-full border border-gray-300 px-3 py-2 rounded-md focus:ring-blue-500 focus:border-blue-500" />
+            </div>
 
-          <div>
-            <button className="absolute w-[613px] h-[61px] top-[813px] left-[55px] rounded-[6px] border-[2px] bg-[#253D90] border-[#253D90] text-white">Sign In</button>
-          </div>
-        </form>
+            <div>
+              <label className="block text-sm font-medium text-gray-700">Password</label>
+              <input type="password" className="mt-1 block w-full border border-gray-300 px-3 py-2 rounded-md focus:ring-blue-500 focus:border-blue-500" />
+            </div>
 
-        <div>
-          <p className="absolute w-[613px] h-[27px] top-[914px] left-[55px] font-[400] text-[20px] leading-[100%] tracking-[0%] text-center text-[#8F8F8F]"> Don't have an account yet? <span className="text-[#253D90]">Join KRIS today.</span></p>
+            <div className="flex items-center justify-between text-sm">
+              <label className="flex items-center">
+                <input type="checkbox" className="form-checkbox mr-2" />
+                Remember me
+              </label>
+              <a href="#" className="text-blue-600 hover:underline">Reset Password?</a>
+            </div>
+
+            <button className="w-full bg-blue-700 text-white py-2 rounded-md hover:bg-blue-800">Sign in</button>
+          </form>
+
+          <p className="mt-4 text-sm text-center text-gray-600">
+            Don't have an account yet? <a href="#" className="text-blue-600 hover:underline">Join KRIS today.</a>
+          </p>
         </div>
       </div>
-      {/* right side */}
-      <div>
-        <img className="absolute w-[962px] h-[1117px] left-[766px] bg-blend-multiply" src={img} />
-        <div className="absolute w-[962px] h-[1117px] left-[766px] inset-0 bg-[#253D90] opacity-80 rounded"></div>
+
+      <div
+        className="w-1/2 h-screen relative bg-cover bg-center"
+        style={{ backgroundImage: `url("${img}")` }}
+      >
+        <div className="absolute inset-0 bg-blue-800 opacity-75 flex flex-col justify-center items-start p-12">
+          <div className="text-3xl font-semibold">
+            <span className="text-white px-2 py-1 rounded ">Manage all</span>
+            <span className="text-yellow-400 font-bold"> HR Operations </span>
+            <span className="text-white px-2 py-1 rounded ">from the comfort of your home.</span>
+          </div>
+
+          <div className="absolute bottom-6 left-12 flex space-x-2">
+            <div className="w-[78px] h-[17px] bg-[#FFC20E] rounded-[8px]"></div>
+            <div className="w-[78px] h-[17px] bg-white rounded-[8px]"></div>
+            <div className="w-[78px] h-[17px] bg-white rounded-[8px]"></div>
+          </div>
+        </div>
       </div>
-
-      <div>
-        <p className='absolute w-[741px] h-[56px] top-[690px] left-[812px] font-[700] text-[45px] leading-[100%] tracking-[0%] text-[#FFFFFF]'>Manage all <span className='text-[#FFC20E]'>HR Operations</span> from the comfort of your home.</p>
-      </div>
-
-      <div className='absolute w-[78px] h-[17px] top-[1037px] left-[812px] bg-[#FFC20E] rounded-[8px]' />
-      <div className='absolute w-[77px] h-[17px] top-[1037px] left-[904px] bg-[#FFFFFF] rounded-[8px]' />
-      <div className='absolute w-[78px] h-[17px] top-[1037px] left-[995px] bg-[#FFFFFF] rounded-[8px]' />
-
-
-
-
     </div>
+
 
   )
 }
