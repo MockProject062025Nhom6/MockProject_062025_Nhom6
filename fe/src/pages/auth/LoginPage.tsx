@@ -1,5 +1,5 @@
-import PromoSection from "@/components/ui/PromoSection"
-import LoginForm from "@/components/ui/LoginForm";
+import PromoSection from "@/components/Section/LoginPromoSection"
+import LoginForm from "@/components/Form/LoginForm";
 
 const LoginPage = () => {
   return (

@@ -1,18 +1,20 @@
 import React, { useState } from "react"
-import PasswordInput from "@/components/ui/PasswordInput"
+import PasswordInput from "@/components/Input/PasswordInput"
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "./card"
-import { Input } from "./input"
+} from "../ui/card"
+import { Input } from "../ui/input"
 import { Label } from "@/components/ui/label"
 import { Checkbox } from "@/components/ui/checkbox"
-import { Button } from "./button"
+import { Button } from "../ui/button"
+import { useNavigate } from "react-router"
 
 const LoginForm = () => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [rememberMe, setRememberMe] = useState(false)
@@ -71,7 +73,7 @@ const LoginForm = () => {
 
         <p className="text-sm text-center text-muted-foreground">
           Don't have an account yet?{" "}
-          <Button variant="link" className="px-0 font-bold text-blue-900">
+          <Button variant="link" className="px-0 font-bold text-blue-900" onClick={() => {navigate("/register")}}>
             Join KRIS today.
           </Button>
         </p>
