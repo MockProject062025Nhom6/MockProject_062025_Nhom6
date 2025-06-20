@@ -32,7 +32,7 @@ export function LoginPage() {
         e.preventDefault()
         console.log("Login data:", formData)
     }
-
+    
     return (
         <div className="grid lg:grid-cols-2 gap-8 px-16 py-20">
             <Card className="w-full">
