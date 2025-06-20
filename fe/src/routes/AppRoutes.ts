@@ -1,4 +1,4 @@
-import LoginPage from "@/pages/auth/LoginPage"
+import { LoginPage } from "@/pages/auth/LoginPage"
 import { createBrowserRouter } from "react-router"
 
 const router = createBrowserRouter([
