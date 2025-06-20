@@ -7,8 +7,8 @@ const FormLogin = () => {
     const [rememberMe, setRememberMe] = useState(false)
     return (
         <div className="w-full">
-            <div className="pl-13.75 pr-23">
-                <h1 className="text-[56px] font-bold text-primary mb-9.5">Login</h1>
+            <div className="pl-1 pr-23">
+                <h1 className="text-[56px] font-bold text-primary mb-6.75">Login</h1>
                 <h3 className="font-normal text-[30px]">
                     Login to your account.
                 </h3>
