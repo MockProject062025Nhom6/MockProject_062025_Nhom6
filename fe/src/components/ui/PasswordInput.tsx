@@ -1,40 +1,38 @@
-import { Eye, EyeOff } from "lucide-react";
-import { type Dispatch, type SetStateAction, useState } from "react";
+import { Eye, EyeOff } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { useState } from 'react';
 
-interface Props {
-  password: string;
-  setPassword: Dispatch<SetStateAction<string>>;
-}
-
-const PasswordInput = ({ password, setPassword }: Props) => {
+// PasswordInput Component
+const PasswordInput = ({ password, setPassword }: { password: string; setPassword: (value: string) => void }) => {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
-    <div>
-      <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
-        Password
-      </label>
+    <div className="space-y-2">
+      <Label htmlFor="password" className='text-blue-900 font-bold'>Password</Label>
       <div className="relative">
-        <input
+        <Input
           id="password"
           type={showPassword ? "text" : "password"}
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="w-full px-3 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 pr-10"
+          className="pr-10 h-12"
           placeholder="Enter your password"
           required
         />
-        <button
+        <Button
           type="button"
+          variant="ghost"
+          size="sm"
+          className="absolute right-0 top-0 h-full px-3 py-2 hover:bg-transparent"
           onClick={() => setShowPassword(!showPassword)}
-          className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
         >
-          {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
-        </button>
+          {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+        </Button>
       </div>
     </div>
   );
 };
 
 export default PasswordInput;
-
