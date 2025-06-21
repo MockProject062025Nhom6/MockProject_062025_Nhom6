@@ -18,7 +18,16 @@ export class User {
   password: string;
 
   @Column()
-  username: string;
+  firstName: string;
+
+  @Column()
+  lastName: string;
+
+  @Column()
+  phoneNumber: string;
+
+  @Column()
+  smsNotifications: boolean;
 
   @CreateDateColumn()
   createdAt: Date;

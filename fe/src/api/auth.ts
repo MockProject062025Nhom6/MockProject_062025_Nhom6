@@ -1,4 +1,9 @@
-import { ApiError, LoginResponse } from "@/types"
+import {
+  ApiError,
+  LoginResponse,
+  RegisterFormData,
+  RegisterResponse,
+} from "@/types"
 
 export const authService = {
   async login(email: string, password: string): Promise<LoginResponse> {
@@ -13,6 +18,54 @@ export const authService = {
     if (!response.ok) {
       const errorData: ApiError = await response.json()
       throw new Error(errorData.message || "Login failed")
+    }
+
+    return response.json()
+  },
+  async register(formData: RegisterFormData): Promise<RegisterResponse> {
+    const {
+      email,
+      password,
+      firstName,
+      lastName,
+      phoneNumber,
+      smsNotifications,
+    } = formData
+    const response = await fetch("http://localhost:3000/auth/register", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email,
+        password,
+        firstName,
+        lastName,
+        phoneNumber,
+        smsNotifications,
+      }),
+    })
+
+    if (!response.ok) {
+      const errorData: ApiError = await response.json()
+      throw new Error(errorData.message || "Registration failed")
+    }
+
+    return response.json()
+  },
+
+  async getProfile(token: string): Promise<any> {
+    const response = await fetch("http://localhost:3000/auth/profile", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    })
+
+    if (!response.ok) {
+      const errorData: ApiError = await response.json()
+      throw new Error(errorData.message || "Failed to get profile")
     }
 
     return response.json()

@@ -1,5 +1,4 @@
 import { useState } from "react"
-import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Eye, EyeOff, Loader2 } from "lucide-react"
@@ -43,7 +42,7 @@ const LoginPage = () => {
       console.log("Login successful:", response.user)
 
       // Redirect to dashboard or home page
-      navigate("/dashboard")
+      navigate("/")
     } catch (err) {
       console.error("Login error:", err)
       setError(
@@ -146,7 +145,7 @@ const LoginPage = () => {
                   required
                   disabled={isLoading}
                 />
-                <Button
+                <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
                   className="absolute inset-y-0 right-0 pr-3 flex items-center"
@@ -157,7 +156,7 @@ const LoginPage = () => {
                   ) : (
                     <Eye className="h-4 w-4 text-gray-400" />
                   )}
-                </Button>
+                </button>
               </div>
             </div>
 

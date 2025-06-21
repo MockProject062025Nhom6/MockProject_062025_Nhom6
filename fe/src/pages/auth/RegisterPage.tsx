@@ -7,20 +7,12 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Eye, EyeOff, Loader2 } from "lucide-react"
-import { Link } from "react-router-dom"
-
-interface RegisterFormData {
-  firstName: string
-  lastName: string
-  email: string
-  phoneNumber: string
-  password: string
-  confirmPassword: string
-  smsNotifications: boolean
-  agreeToTerms: boolean
-}
+import { Link, useNavigate } from "react-router-dom"
+import { authService } from "@/api/auth"
+import { RegisterFormData } from "@/types"
 
 const RegisterPage = () => {
+  const navigate = useNavigate()
   const [showPassword, setShowPassword] = useState(false)
   const [showConfirmPassword, setShowConfirmPassword] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
@@ -62,12 +54,12 @@ const RegisterPage = () => {
       }
 
       // Call register API
-      // const response = await authService.register(formData)
+      const response = await authService.register(formData)
 
-      console.log("Registration successful:", formData)
+      console.log("Registration successful:", formData, response)
 
       // Redirect to login or dashboard
-      // navigate("/login")
+      navigate("/login")
     } catch (err) {
       console.error("Registration error:", err)
       setError(

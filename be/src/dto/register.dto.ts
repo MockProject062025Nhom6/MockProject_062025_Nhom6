@@ -1,5 +1,11 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
-import { IsEmail, IsNotEmpty, MinLength, IsString } from 'class-validator';
+import {
+  IsEmail,
+  IsNotEmpty,
+  MinLength,
+  IsString,
+  IsBoolean,
+} from 'class-validator';
 
 export class RegisterDto {
   @IsEmail()
@@ -12,6 +18,17 @@ export class RegisterDto {
 
   @IsString()
   @IsNotEmpty()
-  @MinLength(3)
-  username: string;
+  firstName: string;
+
+  @IsString()
+  @IsNotEmpty()
+  lastName: string;
+
+  @IsString()
+  @IsNotEmpty()
+  phoneNumber: string;
+
+  @IsNotEmpty()
+  @IsBoolean()
+  smsNotifications?: boolean;
 }
