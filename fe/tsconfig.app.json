@@ -23,7 +23,11 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
 
+<<<<<<< HEAD
     /* alias */
+=======
+    /* Alias */
+>>>>>>> 4cdbe3ae2ff38a37f2aba2fa423bde80e66a6fdc
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]

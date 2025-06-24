@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import img from '@/assets/images/image-login.jpg'
 
 const LoginPage = () => {
@@ -63,3 +64,13 @@ const LoginPage = () => {
 }
 
 export default LoginPage
+=======
+
+const LoginPage = () => {
+    return (
+        <div>LoginPage</div>
+    )
+}
+
+export default LoginPage
+>>>>>>> 4cdbe3ae2ff38a37f2aba2fa423bde80e66a6fdc

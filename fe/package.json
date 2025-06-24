@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.3",
+<<<<<<< HEAD
     "@tailwindcss/vite": "4.1.10",
     "class-variance-authority": "0.7.1",
     "clsx": "2.1.1",
@@ -21,6 +22,19 @@
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-router": "^7.6.2",
+=======
+    "@reduxjs/toolkit": "^2.8.2",
+    "@tailwindcss/vite": "^4.1.10",
+    "@tanstack/react-query": "^5.81.2",
+    "axios": "^1.10.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.522.0",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "react-redux": "^9.2.0",
+    "react-router-dom": "^7.6.2",
+>>>>>>> 4cdbe3ae2ff38a37f2aba2fa423bde80e66a6fdc
     "tailwind-merge": "^3.3.1",
     "tailwindcss": "^4.1.10"
   },
