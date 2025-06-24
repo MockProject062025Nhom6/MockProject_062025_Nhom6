@@ -7,7 +7,7 @@ import { UsersModule } from './features/users/users.module';
 import { User } from './features/users/entities/user.entity';
 @Module({
   imports: [ConfigModule.forRoot(
-    { isGlobal: true, },
+    { isGlobal: true, }
   ),
   TypeOrmModule.forRoot({
     type: 'mysql',
