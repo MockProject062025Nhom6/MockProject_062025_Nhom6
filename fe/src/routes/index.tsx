@@ -1,6 +1,7 @@
 import RegisterPage from "@/pages/auth/RegisterPage"
 import LoginPage from "../pages/auth/LoginPage"
 import { createBrowserRouter } from "react-router-dom"
+import ReportIncidentPage from "@/pages/reports/ReportIncidentPage"
 
 const router = createBrowserRouter([
   {
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <RegisterPage />,
+      },
+      {
+        path: "/report-incident",
+        element: <ReportIncidentPage />,
       },
     ],
   },
