@@ -1,21 +1,16 @@
-import LoginPage from '@/pages/auth/LoginPage'
-import RegisterPage from '@/pages/auth/RegisterPage'
-import { createBrowserRouter } from 'react-router-dom'
+import LoginPage from "@/pages/admin/LoginPage"
+import { createBrowserRouter } from "react-router-dom"
 
-const AppRoutes = createBrowserRouter([{
-    path: '/',
+const AppRoutes = createBrowserRouter([
+  {
+    path: "admin",
     children: [
-        {
-            path: '/login',
-            element: <LoginPage />,
-        },
-        {
-            path: '/register',
-            element: <RegisterPage />,
-        }
-
-    ]
-}])
-
+      {
+        path: "login",
+        element: <LoginPage />,
+      },
+    ],
+  },
+])
 
 export default AppRoutes
