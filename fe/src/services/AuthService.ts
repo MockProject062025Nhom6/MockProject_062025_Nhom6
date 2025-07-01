@@ -1,7 +1,7 @@
 import http from "@/lib/http"
 
 interface LoginPayload {
-  email: string
+  username: string
   password: string
 }
 

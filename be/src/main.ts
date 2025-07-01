@@ -6,9 +6,7 @@ import { JwtAuthGuard } from './features/auth/guard/jwt-auth.guard';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  app.useGlobalPipes(new ValidationPipe(
-    { whitelist: true, }
-  ));
+  app.useGlobalPipes(new ValidationPipe({ whitelist: true }));
 
   const reflector = app.get(Reflector);
   app.useGlobalInterceptors(new TransformInterceptor(reflector));
@@ -16,6 +14,10 @@ async function bootstrap() {
   app.useGlobalGuards(new JwtAuthGuard(reflector));
 
   app.setGlobalPrefix('api');
+
+  app.enableCors({
+    origin: '*',
+  });
 
   await app.listen(process.env.PORT ?? 3000);
 }

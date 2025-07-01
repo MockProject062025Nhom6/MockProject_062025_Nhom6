@@ -13,6 +13,8 @@ import {
 import { Input } from "@/components/ui/input"
 import { Eye, EyeOff } from "lucide-react"
 import { useState } from "react"
+import { login } from "@/services/AuthService"
+import { toast } from "react-toastify"
 
 const formSchema = z.object({
   username: z.string().min(2).max(50),
@@ -21,6 +23,7 @@ const formSchema = z.object({
 
 const LoginForm = () => {
   const [isShowPassword, setIsShowPassword] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -30,8 +33,23 @@ const LoginForm = () => {
     },
   })
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values)
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    setIsLoading(true)
+    try {
+      // Call your login service here
+      const loginRes = await login(values)
+
+      toast.success("Login successful!")
+      // Redirect or show success message
+      // tự thêm chức năng đi
+      console.log("Login successful:", loginRes)
+    } catch (error) {
+      console.error("Login failed:", error)
+      toast.error("Login failed. Please check your credentials.")
+      // Handle error (e.g., show error message)
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   return (
@@ -88,7 +106,7 @@ const LoginForm = () => {
         />
 
         <div className="flex justify-center">
-          <Button type="submit" className="px-12">
+          <Button type="submit" className="px-12" disabled={isLoading}>
             Login
           </Button>
         </div>
