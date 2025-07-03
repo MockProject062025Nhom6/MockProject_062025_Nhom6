@@ -5,11 +5,10 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UsersModule } from './features/users/users.module';
 import { User } from './features/users/entities/user.entity';
+import { CasesModule } from './features/cases/cases.module';
 @Module({
   imports: [
-    ConfigModule.forRoot(
-      { isGlobal: true, }
-    ),
+    ConfigModule.forRoot({ isGlobal: true }),
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],
       useFactory: async (configService: ConfigService) => ({
@@ -24,9 +23,10 @@ import { User } from './features/users/entities/user.entity';
       }),
       inject: [ConfigService],
     }),
-    UsersModule
+    UsersModule,
+    CasesModule,
   ],
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule { }
+export class AppModule {}
